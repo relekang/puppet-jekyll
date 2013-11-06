@@ -7,7 +7,7 @@ define jekyll::site (
   $vcs_type = 'git',
   $site_path = "${base_path}/${title}"
 ) {
-  include jekyll::ngnix
+  include jekyll::nginx
 
   vcsrepo { $site_path:
     ensure   => $ensure,
