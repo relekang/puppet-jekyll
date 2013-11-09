@@ -18,6 +18,5 @@ define jekyll::site (
   exec { "build-${title}":
     command => 'jekyll build',
     cwd     => $site_path,
-    require => Vcsrepo[$title]
   }
 }
