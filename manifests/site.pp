@@ -5,7 +5,7 @@ define jekyll::site (
   $repo,
   $ensure = 'present',
   $vcs_type = 'git',
-  $site_path = "${base_path}/${title}"
+  $site_path = "${jekyll::params::base_path}/${title}"
 ) {
   include jekyll::nginx
 

@@ -1,8 +1,14 @@
 # == Class: jekyll
 
 class jekyll(
-  $base_path = '/var/www'
+  $base_path = undef
 ) {
+  include jekyll::params
+
+  if $base_path == undef {
+    $base_path = $jekyll::params::base_path
+  }
+
   file { $base_path:
     ensure => 'directory',
   }
