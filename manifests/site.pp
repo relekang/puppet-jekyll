@@ -16,7 +16,7 @@ define jekyll::site (
   }
 
   exec { "build-${title}":
-    command     => '/sbin/jekyll build',
+    command     => 'jekyll build',
     cwd         => $site_path,
     subscribe   => Vcsrepo[$site_path],
     refreshonly => true
